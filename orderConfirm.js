@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", async function () {
   try {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     toggleMenu(hamburgerMenu);
-    cartValue();
     const orderPlaced = localStorage.getItem("orderPlace");
     if (orderPlaced) {
       const img = document.querySelector(".confirm-order-image");
@@ -17,6 +16,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       p.innerHTML = `We have sent you an email with the order details`;
     }
     localStorage.clear();
+    cartValue();
   } catch (error) {
     console.log(`Caught Error ${error}`);
   }
