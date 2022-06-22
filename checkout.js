@@ -1,10 +1,21 @@
-import { toggleMenu, cartValue } from "./utils.js";
+import { toggleMenu, cartValue, placeOrder } from "./utils.js";
 
-function placeOrder() {
+async function fetchPlacedOrder() {
+  const res = await fetch(placeOrder);
+  return await response.json();
+}
+
+function placedOrder() {
   const ele = document.querySelector(".place-order");
-
   ele.addEventListener("click", () => {
-    localStorage.clear();
+    try {
+      const res = fetchPlacedOrder();
+      if (res) {
+        localStorage.setItem("orderPlace", "true");
+      }
+    } catch (err) {
+      console.log("Caught Error: ", err);
+    }
   });
 }
 
@@ -45,7 +56,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     toggleMenu(hamburgerMenu);
     cartValue();
     init();
-    placeOrder();
+    placedOrder();
   } catch (error) {
     console.log(`Caught Error ${error}`);
   }

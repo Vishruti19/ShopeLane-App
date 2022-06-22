@@ -390,6 +390,7 @@ footer {
 
 .confirm-order h3 {
   font-weight: 700;
+  padding-top: 50px;
 }
 
 .confirm-order img {
@@ -503,6 +504,17 @@ footer {
   position: fixed;
   bottom: 50px;
   right: 50px;
+}
+
+.confirm-order-image {
+  height: 300px;
+}
+
+.confirm-order-image i {
+  font-size: 250px;
+  color: rgb(96, 230, 96);
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 @media screen and (max-width: 1024px) {

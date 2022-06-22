@@ -1,4 +1,5 @@
 const urlProductList = "https://5d76bf96515d1a0014085cf9.mockapi.io/product";
+const placeOrder = "https://5d76bf96515d1a0014085cf9.mockapi.io/order";
 
 async function fetchData(url) {
   const response = await fetch(url);
@@ -43,4 +44,5 @@ export {
   fetchProductDetails,
   toggleMenu,
   cartValue,
+  placeOrder,
 };
